@@ -4,9 +4,16 @@ class Triangle
   attr_accessor :a, :b, :c
 
   def intitialize(a, b, c)
-    @length = length
+    @a = a
+    @b = b
+    @c = c
   end
 
-  def kind 
+  def kind
+    validate_triangle
+    if a == b && b == c
+      :equilateral
+    elsif a == b || b == c || a == c
+      :isosceles 
 
 end

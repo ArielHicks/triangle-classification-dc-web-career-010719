@@ -1,9 +1,6 @@
-
 class Triangle
-
-  attr_accessor :a, :b, :c
-
-  def intitialize(a, b, c)
+  attr_reader :a, :b, :c
+  def initialize(a, b, c)
     @a = a
     @b = b
     @c = c
@@ -18,10 +15,10 @@ class Triangle
     else
       :scalene
     end
-end
+  end
 
-def validate_triangle
-  real_triangle = [(a + b > c), (a + c > b), (b + c > a)]
+  def validate_triangle
+    real_triangle = [(a + b > c), (a + c > b), (b + c > a)]
     [a, b, c].each { |s| real_triangle << false if s <= 0 }
     raise TriangleError if real_triangle.include?(false)
   end
